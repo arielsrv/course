@@ -12,7 +12,7 @@ type MockUserRepository struct {
 	mock.Mock
 }
 
-func (mock MockUserRepository) GetUser(int) domain.User {
+func (mock *MockUserRepository) GetUser(int) domain.User {
 	args := mock.Called()
 	result := args.Get(0)
 	return result.(domain.User)
