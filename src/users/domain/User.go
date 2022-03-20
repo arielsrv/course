@@ -1,7 +1,7 @@
 package domain
 
 type User struct {
-	Id    int64
+	Id    int
 	Name  string
 	Email string
 }

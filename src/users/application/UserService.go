@@ -12,13 +12,8 @@ func NewUserService(userRepository domain.UserRepository) *UserService {
 	return &UserService{userRepository: userRepository}
 }
 
-func (userService *UserService) GetUser(id int64) *UserDto {
-	user := userService.userRepository.GetUser(id)
-
-	userDto := new(UserDto)
-	userDto.Id = user.Id
-	userDto.Name = user.Name
-	userDto.Email = user.Email
-
+func (service *UserService) GetUser(id int64) UserDto {
+	user := service.userRepository.GetUser(id)
+	userDto := UserDto{Id: user.Id, Name: user.Name, Email: user.Email}
 	return userDto
 }

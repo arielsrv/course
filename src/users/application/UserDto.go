@@ -1,7 +1,7 @@
 package application
 
 type UserDto struct {
-	Id    int64
+	Id    int
 	Name  string
 	Email string
 }

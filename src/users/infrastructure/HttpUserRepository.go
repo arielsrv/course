@@ -5,15 +5,10 @@ import (
 )
 
 type HttpUserRepository struct {
-	user *domain.User
+	user domain.User
 }
 
-func (httpUserRepository HttpUserRepository) GetUser(int64) *domain.User {
-	httpUserRepository.user = new(domain.User)
-
-	httpUserRepository.user.Id = 1
-	httpUserRepository.user.Name = "Steve Jobs"
-	httpUserRepository.user.Email = "stevejobs@apple.com"
-
-	return httpUserRepository.user
+func (repository HttpUserRepository) GetUser(int64) domain.User {
+	user := domain.User{Id: 1, Name: "Steve Jobs", Email: "stevejobs@apple.com"}
+	return user
 }
