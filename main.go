@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -20,14 +21,18 @@ func main() {
 	userService := application.NewUserService(userRepository)
 	infrastructure.NewUserController(userService)
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 	server := &http.Server{
 		Handler:      router,
-		Addr:         "127.0.0.1:8080",
+		Addr:         "127.0.0.1:" + port,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
 
-	log.Println("Listening...")
+	log.Println("Listening on :" + port + " ...")
 	log.Fatal(server.ListenAndServe())
 }
 
