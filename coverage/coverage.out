@@ -1,0 +1,10 @@
+mode: count
+course/src/users/application/UserService.go:11.72,13.2 1 1
+course/src/users/application/UserService.go:15.53,19.2 3 1
+course/src/users/infrastructure/HttpUserRepository.go:11.63,14.2 2 0
+course/src/users/infrastructure/UserController.go:14.78,16.2 1 0
+course/src/users/infrastructure/UserController.go:18.65,21.2 2 0
+course/main.go:14.13,25.16 9 0
+course/main.go:28.2,36.36 3 0
+course/main.go:25.16,27.3 1 0
+course/main.go:39.69,42.2 2 0

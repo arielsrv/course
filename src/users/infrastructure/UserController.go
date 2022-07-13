@@ -15,7 +15,7 @@ func NewUserController(userService *application.UserService) *UserController {
 	return &UserController{userService: userService}
 }
 
-func GetUser(writer http.ResponseWriter, request *http.Request) {
+func GetUser(writer http.ResponseWriter, _ *http.Request) {
 	user := domain.User{Id: 1, Name: "Steve Jobs", Email: "stevejobs@apple.com"}
 	json.NewEncoder(writer).Encode(user)
 }
